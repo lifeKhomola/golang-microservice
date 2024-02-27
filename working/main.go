@@ -1,13 +1,14 @@
 package main
 
 import (
-	"log"
 	"net/http"
+	"working/routes"
+
+	"github.com/gorilla/mux"
 )
 
-func main() {  //handles excecutables
-	http.HandleFunc("/",func(http.ResponseWriter,*http.Request){ 
-		log.Println("hello world")
-	})
-	http.ListenAndServe(":9090",nil) // defaultservemux (http handler- handler is an interface) - nil
+func main() {
+	router := mux.NewRouter()
+	routes.UserRoutes(router)
+	http.ListenAndServe(":9090",router)
 }
