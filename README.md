@@ -1,2 +1,2 @@
-# golang-microservice
+# golang-microservices
 golang-microservice
